@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Work+Sans&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #fffc52;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.header-hamburger {
+  padding: 20px;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.header-hamburger span {
+  width: 40px;
+  height: 2px;
+  background-color: #000000;
+  display: flex;
+  opacity: 0.6;
+  margin-top: 5px;
+}
+
+.header-hamburger .header-hamburger-item-2 {
+  margin-top: 10px;
+}
+
+.header-title {
+  z-index: 20;
+}
+
+.header-title h6 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  margin: 0;
+  margin-top: 12px;
+}
+
+.header-cart {
+  display: flex;
+  padding: 20px;
+  position: relative;
+  z-index: 20;
+}
+
+.header-cart div {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 800;
+  position: relative;
+  top: -2px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.header-nav {
+  display: none;
+}
+
+.header-socials {
+  display: none;
+}
+
+section {
+  padding: 20px;
+}
+
+section h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 5rem;
+  line-height: 5rem;
+  word-spacing: 0.8rem;
+  margin: 0;
+  margin-top: 5vh;
+}
+
+section p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 1.6rem;
+  margin: 0;
+  margin-top: 3rem;
+}
+
+.header-nav {
+  position: fixed;
+  background-color: #fffc52;
+  top: 0;
+  left: 0;
+  width: 96vw;
+  height: 100vh;
+  overflow: hidden;
+  justify-content: center;
+  z-index: 10;
+}
+
+.header-nav ul {
+  list-style: none;
+  display: flex;
+  position: relative;
+  top: 30vh;
+  left: 0;
+  flex-direction: column;
+  text-align: center;
+}
+
+.header-nav ul li {
+  margin: 1.1vh 0px;
+}
+
+.header-nav ul li a {
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 500;
+}
+
+.header-nav ul li a:visited {
+  color: #000;
+}
+
+.header-socials {
+  position: absolute;
+  z-index: 20;
+  bottom: 5vh;
+  left: 4vw;
+  width: 96vw;
+  justify-content: center;
+  align-content: center;
+}
+
+.header-socials svg {
+  margin: auto 10px;
+}
+
+.info-banner-container {
+  margin: 0;
+  margin-top: 10vh;
+}
+
+.info-banner-container .info-section-one {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+  position: relative;
+}
+
+.info-banner-container .info-section-one img {
+  width: 100%;
+  height: 30vh;
+  object-fit: cover;
+}
+
+.info-banner-container .info-section-one .block-image-one {
+  background-color: #fffc52;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 30vh;
+}
+
+.info-banner-container .info-section-one .block-image-two {
+  background-color: #fffc52;
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 30vh;
+  z-index: 0;
+  bottom: 0px;
+}
+
+.info-banner-container .info-section-two p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 20px;
+  padding-top: 20px;
+}
+
+@media screen and (min-width: 800px) {
+  .header-hamburger {
+    display: none;
+  }
+
+  header {
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .header-nav {
+    display: flex;
+    background-color: transparent;
+    position: relative;
+    width: auto;
+    height: auto;
+    opacity: 1;
+  }
+
+  .header-nav ul {
+    top: 0;
+    flex-direction: row;
+    margin: 0;
+  }
+
+  .header-nav ul li {
+    margin: auto 10px;
+  }
+
+  .header-nav ul li a {
+    font-size: 1.1rem;
+  }
+
+  .header-socials {
+    display: flex;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+    bottom: 0;
+    width: auto;
+    left: 0;
+  }
+
+  .header-title {
+    position: absolute;
+    left: 2vw;
+  }
+
+  .header-cart {
+    margin-right: 2vw;
+  }
+
+  .header-socials svg {
+    margin: auto 5px;
+  }
+
+  .hero-section {
+    margin: auto 2vw;
+    overflow: hidden;
+  }
+
+  .hero-section h1 {
+    font-size: 6rem;
+    line-height: 6rem;
+    width: 80vw;
+    text-align: left;
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 1224px) {
+
+  .hero-section {
+    margin: auto 10%;
+  }
+
+  .hero-section h1 {
+    margin-top: 15vh;
+    width: 80%;
+    font-size: 6.7rem;
+    word-spacing: 1rem;
+    line-height: 6.5rem;
+  }
+}
