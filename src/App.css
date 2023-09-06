@@ -7,10 +7,17 @@ html, body {
   background-color: #fffc52;
 }
 
+main {
+  position: relative;
+  z-index: 10;
+}
+
 header {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+  position: absolute;
+  width: 100%;
 }
 
 .header-hamburger {
@@ -95,7 +102,7 @@ section p {
   top: 0;
   left: 0;
   width: 96vw;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   justify-content: center;
   z-index: 10;
@@ -127,11 +134,11 @@ section p {
 }
 
 .header-socials {
-  position: absolute;
+  position: fixed;
   z-index: 20;
   bottom: 5vh;
   left: 4vw;
-  width: 96vw;
+  width: 90vw;
   justify-content: center;
   align-content: center;
 }
@@ -166,7 +173,7 @@ section p {
   top: 0;
   left: 0;
   width: 50%;
-  height: 30vh;
+  height: 0;
 }
 
 .info-banner-container .info-section-one .block-image-two {
@@ -174,7 +181,7 @@ section p {
   position: absolute;
   right: 0;
   width: 50%;
-  height: 30vh;
+  height: 0;
   z-index: 0;
   bottom: 0px;
 }
@@ -184,6 +191,97 @@ section p {
   font-weight: 600;
   margin: 0 20px;
   padding-top: 20px;
+}
+
+.info-banner-container .info-section-two h1 {
+  font-size: 5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  line-height: 5rem;
+  margin: 20px
+}
+
+.info-dates-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-dates-container h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 3.3rem;
+  line-height: 3rem;
+}
+
+.info-dates-container div {
+  width: 5rem;
+  height: 12px;
+  background-color: #000;
+  margin: 20px 0px;
+}
+
+.info-dates-container h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 4.2rem;
+  line-height: 4.2rem;
+}
+
+.info-dates-container p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.action-buy-tickets {
+  width: 100%;
+  height: 30vh;
+  margin-top: 6rem;
+}
+
+.action-buy-tickets .buy-tickets {
+  background-color: #000;
+  height: 100%;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-buy-tickets .buy-tickets a {
+  color: #fffc52;
+  background-color: transparent;
+  border: none;
+  font-size: 4rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.footer-container {
+  margin: 8rem 0px;
+}
+
+.footer-container .socials {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.footer-container .socials li {
+  padding: 20px;
+}
+
+.footer-container .socials li a {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: #000;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 800px) {
