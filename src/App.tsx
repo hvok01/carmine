@@ -93,7 +93,6 @@ function App() {
               opacity: 1,
               display: "flex",
               delay: -0.5,
-              y: "+10",
             }).fromTo(navLinksCurrent, {
               opacity: 0,
               display: "none",
@@ -154,7 +153,6 @@ function App() {
             }).to(navContainer.current, {
               opacity: 0,
               delay: -0.4,
-              y: "-10",
             })
   
             if(lineOne) {
@@ -255,11 +253,8 @@ function App() {
         Brooklyn—NY
         Clarkson House
         </h1>
-        <p>
-        We were always taught that art creates problems and design solves them. Is that an overly limiting way to think of our practice? Are we closing ourselves off to interesting opportunities by not embracing the role of troublemakers?
-        </p>
       </section>
-      <div className="info-banner-container">
+      <div className="info-banner-container special-info">
         <div className="info-section-one">
           {
             //first one height to 0
@@ -272,11 +267,16 @@ function App() {
           <img src={carmine2} alt="camine image artists 1" />
         </div>
         <div className="info-section-two">
-          <h1>
-          Speakers include Mark Novo, Sofia Pazari, Sandra Cami, Kevin Matsuya, Chase Nevins, Ida Kester, Helen Gates and more.
-          </h1>
+          <p>
+          We were always taught that art creates problems and design solves them. Is that an overly limiting way to think of our practice? Are we closing ourselves off to interesting opportunities by not embracing the role of troublemakers?
+          </p>
         </div>
       </div>
+      <section className="info-container">
+        <h1>
+        Speakers include Mark Novo, Sofia Pazari, Sandra Cami, Kevin Matsuya, Chase Nevins, Ida Kester, Helen Gates and more.
+        </h1>
+      </section>
       <div className="info-banner-container">
         <div className="info-section-one">
           {

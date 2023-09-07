@@ -15,9 +15,9 @@ main {
 header {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin: 20px 2% 0px 2%;
   position: absolute;
-  width: 100%;
+  width: 96%;
 }
 
 .header-hamburger {
@@ -27,7 +27,7 @@ header {
 }
 
 .header-hamburger span {
-  width: 40px;
+  width: 36px;
   height: 2px;
   background-color: #000000;
   display: flex;
@@ -75,20 +75,20 @@ header {
 }
 
 section {
-  padding: 20px;
+  padding: 30px;
 }
 
-section h1 {
+.hero-section h1 {
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
   font-size: 5rem;
   line-height: 5rem;
   word-spacing: 0.8rem;
   margin: 0;
-  margin-top: 5vh;
+  margin-top: 15vh;
 }
 
-section p {
+.hero-section p {
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
   font-size: 1.6rem;
@@ -149,7 +149,7 @@ section p {
 
 .info-banner-container {
   margin: 0;
-  margin-top: 10vh;
+  margin-top: 4vh;
 }
 
 .info-banner-container .info-section-one {
@@ -157,7 +157,7 @@ section p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 20px;
+  margin: 0 30px;
   position: relative;
 }
 
@@ -189,8 +189,8 @@ section p {
 .info-banner-container .info-section-two p {
   font-size: 1.2rem;
   font-weight: 600;
-  margin: 0 20px;
-  padding-top: 20px;
+  margin: 0 30px;
+  padding-top: 5vh;
 }
 
 .info-banner-container .info-section-two h1 {
@@ -355,6 +355,19 @@ section p {
     text-align: left;
     overflow: hidden;
   }
+
+  .info-banner-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .info-banner-container .info-section-one, .info-banner-container .info-section-two {
+    flex: 1;
+  }
+
+  .special-info {
+    flex-direction: row-reverse;
+  }
 }
 
 @media screen and (min-width: 1224px) {
@@ -369,5 +382,10 @@ section p {
     font-size: 6.7rem;
     word-spacing: 1rem;
     line-height: 6.5rem;
+  }
+
+  .info-banner-container, .info-dates-container, .info-container, .action-buy-tickets {
+    max-width: 1224px;
+    margin: 0 auto;
   }
 }
