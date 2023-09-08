@@ -204,6 +204,7 @@ section {
 .info-dates-container {
   display: flex;
   flex-direction: column;
+  margin-top: 6vh;
 }
 
 .info-dates-container h2 {
@@ -231,6 +232,24 @@ section {
   font-size: 1.2rem;
   font-weight: 600;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.special-info {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-top: 0;
+}
+
+.special-info .info-section-two p {
+  padding-top: 0;
+  margin-bottom: 6vh;
+}
+
+.info-container h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 5rem;
+  line-height: 5rem;
 }
 
 .action-buy-tickets {
@@ -368,24 +387,69 @@ section {
   .special-info {
     flex-direction: row-reverse;
   }
+
+  .info-banner-container .info-section-two p {
+    padding-top: 0;
+  }
 }
 
 @media screen and (min-width: 1224px) {
 
   .hero-section {
-    margin: auto 10%;
+    margin: 5vh 20vh 20vh 20vh;
+    padding-top: 5vh;
   }
 
   .hero-section h1 {
     margin-top: 15vh;
     width: 80%;
-    font-size: 6.7rem;
+    font-size: 7rem;
     word-spacing: 1rem;
-    line-height: 6.5rem;
+    line-height: 7rem;
   }
 
   .info-banner-container, .info-dates-container, .info-container, .action-buy-tickets {
-    max-width: 1224px;
+    max-width: 1540px;
     margin: 0 auto;
+  }
+
+  .info-banner-container .info-section-one {
+    margin: 0;
+    flex: 1.5;
+  }
+
+  .info-banner-container .info-section-one img {
+    height: 70vh;
+  }
+
+  .info-banner-container .info-section-two p {
+    padding: 1rem;
+    text-align: justify;
+    margin-left: 4vw;
+    padding-top: 0;
+  }
+
+  .info-dates-container h2 {
+    font-size: 8rem;
+    line-height: 8rem;
+  }
+
+  .info-dates-container div {
+    height: 2vh;
+    width: 8rem;
+  }
+
+  .info-dates-container h1 {
+    font-size: 9rem;
+    line-height: 9rem;
+  }
+
+  .special-info .info-section-two p {
+    flex-direction: row-reverse;
+    margin-left: 0;
+  }
+
+  .action-buy-tickets .buy-tickets {
+    margin-top: 10vh;
   }
 }

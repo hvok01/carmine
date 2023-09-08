@@ -29,7 +29,15 @@ function App() {
   useLayoutEffect(() => {
 
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline();
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".block-image-one",
+          start: "-60% center",
+          end: "200% center",
+          // markers: true,
+          scrub: false,
+        }
+      });
 
       tl.from(crossOne.current, {
         opacity: 0,
@@ -41,13 +49,13 @@ function App() {
         delay: -0.8,
       })
       
-      tl.fromTo(showImagePartOne.current, {
-        height: "30vh",
+      tl.fromTo(".block-image-one", {
+        height: "100%",
       }, {
         height: 0,
         duration: 0.3,
-      }).fromTo(showImagePartTwo.current, {
-        height: "30vh",
+      }).fromTo(".block-image-two", {
+        height: "100%",
       }, {
         height: 0,
         duration: 0.3,
@@ -226,13 +234,7 @@ function App() {
       </main>
       <div className="info-banner-container">
         <div className="info-section-one">
-          {
-            //first one height to 0
-          }
           <div className="block-image-one" ref={showImagePartOne}></div>
-          {
-            //second one height to 0
-          }
           <div className="block-image-two" ref={showImagePartTwo}></div>
           <img src={carmine} alt="camine image artists 1" />
         </div>
@@ -256,14 +258,8 @@ function App() {
       </section>
       <div className="info-banner-container special-info">
         <div className="info-section-one">
-          {
-            //first one height to 0
-          }
-          <div className="block-image-one" ref={showImagePartOne}></div>
-          {
-            //second one height to 0
-          }
-          <div className="block-image-two" ref={showImagePartTwo}></div>
+          <div className="block-image-one second-image" ></div>
+          <div className="block-image-two" ></div>
           <img src={carmine2} alt="camine image artists 1" />
         </div>
         <div className="info-section-two">
@@ -279,14 +275,8 @@ function App() {
       </section>
       <div className="info-banner-container">
         <div className="info-section-one">
-          {
-            //first one height to 0
-          }
-          <div className="block-image-one" ref={showImagePartOne}></div>
-          {
-            //second one height to 0
-          }
-          <div className="block-image-two" ref={showImagePartTwo}></div>
+          <div className="block-image-one third-image" ></div>
+          <div className="block-image-two" ></div>
           <img src={carmine3} alt="camine image artists 1" />
         </div>
         <div className="info-section-two">
