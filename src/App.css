@@ -408,6 +408,10 @@ section {
     line-height: 7rem;
   }
 
+  .info-banner-container {
+    width: 80%;
+  }
+
   .info-banner-container, .info-dates-container, .info-container, .action-buy-tickets {
     max-width: 1540px;
     margin: 0 auto;

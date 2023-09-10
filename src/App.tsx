@@ -20,8 +20,6 @@ function App() {
   const navContainer = useRef(null);
   const navLinks = useRef(null);
   const socialsRef = useRef(null);
-  const showImagePartOne = useRef(null);
-  const showImagePartTwo = useRef(null);
   const [timeline, setTimeline] = useState<gsap.core.Timeline>();
 
   //https://carmine-fluid-demo.squarespace.com/
@@ -29,11 +27,12 @@ function App() {
   useLayoutEffect(() => {
 
     const ctx = gsap.context(() => {
+      
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".block-image-one",
           start: "-60% center",
-          end: "200% center",
+          end: "100% center",
           // markers: true,
           scrub: false,
         }
@@ -47,19 +46,35 @@ function App() {
         opacity: 0,
         duration: 1,
         delay: -0.8,
-      })
+      });
+
+      const imageBlocksOne : gsap.TweenTarget[]= gsap.utils.toArray(".block-image-one");
+      const imageBlocksTwo : gsap.TweenTarget[]= gsap.utils.toArray(".block-image-two");
+
+      if(imageBlocksOne) {
+        imageBlocksOne.forEach((item) => {
       
-      tl.fromTo(".block-image-one", {
-        height: "100%",
-      }, {
-        height: 0,
-        duration: 0.3,
-      }).fromTo(".block-image-two", {
-        height: "100%",
-      }, {
-        height: 0,
-        duration: 0.3,
-      })
+          tl.fromTo(item, {
+            height: "100%",
+          }, {
+            height: 0,
+            duration: 0.2,
+          })
+        })
+      }
+
+      if(imageBlocksTwo) {
+        imageBlocksTwo.forEach((item) => {
+      
+          tl.fromTo(item, {
+            height: "100%",
+          }, {
+            height: 0,
+            duration: 0.2,
+          })
+
+        })
+      }
 
       setTimeline(tl);
     });
@@ -234,8 +249,8 @@ function App() {
       </main>
       <div className="info-banner-container">
         <div className="info-section-one">
-          <div className="block-image-one" ref={showImagePartOne}></div>
-          <div className="block-image-two" ref={showImagePartTwo}></div>
+          <div className="block-image-one"></div>
+          <div className="block-image-two"></div>
           <img src={carmine} alt="camine image artists 1" />
         </div>
         <div className="info-section-two">
@@ -260,7 +275,7 @@ function App() {
         <div className="info-section-one">
           <div className="block-image-one second-image" ></div>
           <div className="block-image-two" ></div>
-          <img src={carmine2} alt="camine image artists 1" />
+          <img src={carmine2} alt="camine image artists 2" />
         </div>
         <div className="info-section-two">
           <p>
@@ -277,7 +292,7 @@ function App() {
         <div className="info-section-one">
           <div className="block-image-one third-image" ></div>
           <div className="block-image-two" ></div>
-          <img src={carmine3} alt="camine image artists 1" />
+          <img src={carmine3} alt="camine image artists 3" />
         </div>
         <div className="info-section-two">
           <p>
