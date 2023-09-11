@@ -27,16 +27,8 @@ function App() {
   useLayoutEffect(() => {
 
     const ctx = gsap.context(() => {
-      
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".block-image-one",
-          start: "-60% center",
-          end: "100% center",
-          // markers: true,
-          scrub: false,
-        }
-      });
+
+      const tl = gsap.timeline();
 
       tl.from(crossOne.current, {
         opacity: 0,
@@ -48,29 +40,28 @@ function App() {
         delay: -0.8,
       });
 
-      const imageBlocksOne : gsap.TweenTarget[]= gsap.utils.toArray(".block-image-one");
-      const imageBlocksTwo : gsap.TweenTarget[]= gsap.utils.toArray(".block-image-two");
+      const allContainers : gsap.TweenTarget[] = gsap.utils.toArray(".info-section-one");
 
-      if(imageBlocksOne) {
-        imageBlocksOne.forEach((item) => {
-      
-          tl.fromTo(item, {
+      if(allContainers) {
+        allContainers.forEach((container: any) => {
+          const wrapperOne = container.querySelector(".block-image-one");
+          const wrapperTwo = container.querySelector(".block-image-two");
+          const animation = gsap.fromTo([wrapperOne, wrapperTwo], {
             height: "100%",
           }, {
             height: 0,
-            duration: 0.2,
+            duration: 0.4,
           })
-        })
-      }
 
-      if(imageBlocksTwo) {
-        imageBlocksTwo.forEach((item) => {
-      
-          tl.fromTo(item, {
-            height: "100%",
-          }, {
-            height: 0,
-            duration: 0.2,
+          ScrollTrigger.create({
+            trigger: container,
+            animation: animation,
+            start: "-10% center",
+            end: "100% center",
+            scrub: false,
+            toggleActions: "play none none reverse",
+            once: true,
+            // markers: true,
           })
 
         })
