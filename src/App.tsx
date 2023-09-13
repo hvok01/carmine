@@ -72,6 +72,47 @@ function App() {
     return () => ctx.revert();
   }, []);
 
+  const onClickAnimations = (navLinksCurrent: any) => {
+
+    !timeline?.isActive() && timeline?.to(crossOne.current, {
+        rotate: "+=45",
+        y: "+=7",
+        scaleX: 0.6,
+        duration: 0.4,
+      }).to(crossTwo.current, {
+        rotate: "+=135",
+        y: "-=3",
+        scaleX: 0.6,
+        translateY: "-=11px",
+        duration: 0.5,
+        delay: -0.5,
+        ease: "easeIn"
+      }).fromTo(navContainer.current, {
+        opacity: 0,
+        display: "none"
+      }, {
+        opacity: 1,
+        display: "flex",
+        delay: -0.5,
+      }).fromTo(navLinksCurrent, {
+        opacity: 0,
+        display: "none",
+      },{
+        opacity: 1,
+        display: "flex",
+        delay: -0.3,
+        y: "+10",
+      }).fromTo(socialsRef.current, {
+        opacity: 0,
+        display: "none",
+      }, {
+        opacity: 1,
+        display: "flex",
+        delay: -0.1,
+        y: "+10",
+      })
+  }
+
   const handleNavLinks = () => {
 
     const lineOne = document.getElementById("header-line-1");
@@ -87,43 +128,7 @@ function App() {
 
           if(navLinksCurrent.style.display === "none" || navLinksCurrent.style.display.length === 0) {
   
-            !timeline?.isActive() && timeline?.to(crossOne.current, {
-              rotate: "+=45",
-              y: "+=7",
-              scaleX: 0.6,
-              duration: 0.4,
-            }).to(crossTwo.current, {
-              rotate: "+=135",
-              y: "-=3",
-              scaleX: 0.6,
-              translateY: "-=11px",
-              duration: 0.5,
-              delay: -0.5,
-              ease: "easeIn"
-            }).fromTo(navContainer.current, {
-              opacity: 0,
-              display: "none"
-            }, {
-              opacity: 1,
-              display: "flex",
-              delay: -0.5,
-            }).fromTo(navLinksCurrent, {
-              opacity: 0,
-              display: "none",
-            },{
-              opacity: 1,
-              display: "flex",
-              delay: -0.3,
-              y: "+10",
-            }).fromTo(socialsRef.current, {
-              opacity: 0,
-              display: "none",
-            }, {
-              opacity: 1,
-              display: "flex",
-              delay: -0.1,
-              y: "+10",
-            })
+            onClickAnimations(navLinksCurrent);
   
             if(lineOne) {
               lineOne.style.opacity = "1";
@@ -168,6 +173,8 @@ function App() {
               opacity: 0,
               delay: -0.4,
             })
+
+            // tl.reverse();
   
             if(lineOne) {
               lineOne.style.opacity = "0.6";
